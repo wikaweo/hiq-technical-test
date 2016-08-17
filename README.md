@@ -25,4 +25,4 @@ This repository serves as a technical interview for developers pursuing a positi
 * In addition to this assignment you should also be prepared to show another project you developed.
 
 ### Who do I talk to? ###
-If you have any questions about your assignment you are welcome to contact Richard Jansson at [richard.jansson@presis.se](mailto:richard.jansson@presis.se)
+If you have any questions about your assignment you are welcome to contact Richard Pauly at [richard.pauly@presis.se](mailto:richard.pauly@presis.se)
