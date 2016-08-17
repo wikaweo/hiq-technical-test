@@ -20,8 +20,8 @@ This repository serves as a technical interview for developers pursuing a positi
 
 ### Handing in your assignment ###
 * Bring your web application along to your interview
-    * Be prepared to run and demonstrate the web application
-    * Be prepared to present the code in an IDE of your choice
+    * Be prepared to run and demonstrate the web application. 
+    * Be prepared to present the code in an IDE of your choice on your own computer. 
 * In addition to this assignment you should also be prepared to show another project you developed.
 
 ### Who do I talk to? ###
