@@ -15,8 +15,8 @@ This repository serves as a technical interview for developers pursuing a positi
     * Develop a web application with a restful web API and frontend
 * You are free to choose what specific technologies to use in this assignment, however we suggest
     * ASP.NET MVC & ASP.NET MVC Web API
-    * JavaScript, AngularJS, Less
-    * Microsoft SQL Server, Dapper.NET
+    * JavaScript, React/Vue/Angular
+    * Please make a list of all your technical choises and motivate them
 
 ### Handing in your assignment ###
 * Bring your web application along to your interview
