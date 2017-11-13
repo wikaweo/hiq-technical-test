@@ -1,13 +1,13 @@
 # README #
 
 ### What is this repository for? ###
-This repository serves as a technical interview for developers pursuing a position at Presis.
+This repository serves as a technical interview for developers pursuing a position at HiQ Skåne.
 
 ## Instructions ##
 * Your task is to build a web application that processes files containing text.
 * The user should upload a file from his or her browser to the server and then be presented with the processed text.
 * In the processed text the application should surround every occurrence of the most used word with foo and bar.
-    * Example: if the most used word is 'presis', the processed text should display 'foopresisbar' instead of 'presis'.
+    * Example: if the most used word is 'hiq', the processed text should display 'foohiqbar' instead of 'hiq'.
 * In this repository you'll find some useful textfiles for testing your application.
 * Choose one of the options below for your web application:
     * Develop a web application (frontend only)
