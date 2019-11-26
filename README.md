@@ -14,15 +14,22 @@ This repository serves as a technical interview for developers pursuing a positi
     * Develop a restful web API (backend only)
     * Develop a web application with a restful web API and frontend
 * You are free to choose what specific technologies to use in this assignment, however we suggest
-    * ASP.NET MVC & ASP.NET MVC Web API
-    * JavaScript, React/Vue/Angular
-    * Please make a list of all your technical choises and motivate them
+    * ASP.NET Core, ASP.NET Framework for backend
+    * JavaScript, React/Vue/Angular for frontend
+    * Webpack
+    * Automated tests are nice, but not mandatory
+    * Please list of all your technical choises and motivate them
 
-### Handing in your assignment ###
-* Bring your web application along to your interview
-    * Be prepared to run and demonstrate the web application. 
+## Where do I hand in my solution? ##
+* Please send your solution to [kajsa.norell@hiq.se](mailto:kajsa.norell@hiq.se) as a zip-file 
+    * All typically ignored files and folders should be removed (node_modules, bin etc).
+    * The zip-file should contain a clone of this git repo, with your work added in commit(s).
+
+### If we agree to meet for an interview ###
+* Please bring your web application along to your interview
+    * Be prepared to run and demonstrate the application. 
     * Be prepared to present the code in an IDE of your choice on your own computer. 
-* In addition to this assignment you should also be prepared to show another project you developed.
+* In addition to this assignment you should also be prepared to show other projects you developed (if you have any).
 
-### Who do I talk to? ###
-If you have any questions about your assignment you are welcome to contact Richard Pauly at [richard.pauly@hiq.se](mailto:richard.pauly@hiq.se)
+### If I have any questions ###
+If you have any questions about your assignment you are welcome to contact Kajsa Norell at [kajsa.norell@hiq.se](mailto:kajsa.norell@hiq.se)
