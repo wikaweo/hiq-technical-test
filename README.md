@@ -28,6 +28,7 @@ Please answer these questions in a markdown file called `Answers.md`.
 * Please send your solution to [kajsa.norell@hiq.se](mailto:kajsa.norell@hiq.se) as a zip-file 
     * All typically ignored files and folders should be removed (node_modules, bin etc).
     * The zip-file should contain a clone of this git repo, with your work added in commit(s).
+    * Try to make the solution as easy as possible for us to get up and running to test drive.
 
 ### If we agree to meet for an interview ###
 * Please bring your application along to your interview
