@@ -25,7 +25,7 @@ Please answer these questions in a markdown file called `Answers.md`.
 4. What did you think of this recruitment test?
 
 ## How do I hand in my solution? ##
-* Please send your solution to [kajsa.norell@hiq.se](mailto:kajsa.norell@hiq.se) as a zip-file 
+* Please send your solution to the person who asked you to do the test as a zip-file
     * All typically ignored files and folders should be removed (node_modules, bin etc).
     * The zip-file should contain a clone of this git repo, with your work added in commit(s).
     * Try to make the solution as easy as possible for us to get up and running to test drive.
