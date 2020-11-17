@@ -39,4 +39,4 @@ Please answer these questions in a markdown file called `Answers.md`.
 
 
 ### If I have any questions ###
-If you have any questions about your assignment you are welcome to contact Kajsa Norell at [kajsa.norell@hiq.se](mailto:kajsa.norell@hiq.se)
+If you have any questions about your assignment you are welcome to contact the person who asked you to do the test.
