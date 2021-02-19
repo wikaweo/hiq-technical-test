@@ -61,7 +61,7 @@ Please answer these questions in a markdown file called `Answers.md`.
 4. What did you think of this recruitment test?
 
 ## How do I hand in my solution? ##
-* Please send your solution to [kajsa.norell@hiq.se](mailto:kajsa.norell@hiq.se) as a zip-file 
+* Please send your solution to [anna.eggert@hiq.se](mailto:anna.eggert@hiq.se) as a zip-file 
     * All typically ignored files and folders should be removed (node_modules, bin etc).
     * The zip-file should contain a clone of this git repo, with your work added in commit(s).
 * The answers to the technical questions should be included as a single markdown file named `Answers.md`.
@@ -69,7 +69,7 @@ Please answer these questions in a markdown file called `Answers.md`.
 Before submitting it to us, please make sure that the following requirements have been met:
 * Complete the user story described below.
 * In a README file, describe your solution and make sure you provide a guide on how to use you simulator. If your solution need specific instructions on how to run and compile your code you must add them to the README as well.
-* Write your solution in one of the following languages; Java, C++, C#, JavaScript. If you wish to use another language, please check beforehand with Kajsa Norell.
+* Write your solution in one of the following languages; Java, C++, C#, JavaScript. If you wish to use another language, please check beforehand with Anna Eggert.
 * Your code must compile and run.
 * Feel free to use whatever frameworks/libraries/packages you like.
 * You must include tests.
