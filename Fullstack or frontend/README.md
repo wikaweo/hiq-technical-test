@@ -35,7 +35,7 @@ Please answer these questions in a markdown file called `Answers.md`.
 
 
 ## Where do I hand in my solution? ##
-* Please send your solution to [kajsa.norell@hiq.se](mailto:kajsa.norell@hiq.se) as a zip-file 
+* Please send your solution to [anna.eggert@hiq.se](mailto:anna.eggert@hiq.se) as a zip-file 
     * All typically ignored files and folders should be removed (node_modules, bin etc).
     * The zip-file should contain a clone of this git repo, with your work added in commit(s).
 
@@ -46,4 +46,4 @@ Please answer these questions in a markdown file called `Answers.md`.
 * In addition to this assignment you should also be prepared to show other projects you developed (if you have any).
 
 ### If I have any questions ###
-If you have any questions about your assignment you are welcome to contact Kajsa Norell at [kajsa.norell@hiq.se](mailto:kajsa.norell@hiq.se)
+If you have any questions about your assignment you are welcome to contact Anna Eggert at [anna.eggert@hiq.se](mailto:anna.eggert@hiq.se)
