@@ -34,13 +34,13 @@ The simulator should work as a console application. It shall run with inputted c
 * A sequence of action commands.
 
 After a simulation has run, the simulator shall output the result. A result of the simulation can be either successful or unsuccessfull. 
-* Criterias for a successfull simulation is that the car move through the room according to given commands, while not crashing into any wall during the route. 
+* Criteria for a successfull simulation is that the car moves through the room according to given commands, while not crashing into any wall during the route. 
 * The output from a successful simulation should consist of the end position of the car as well as the heading of the car.
-* Criterias for an unsuccessful simulation is that the car crash into a wall.
+* Criteria for an unsuccessful simulation is that the car crashes into a wall.
 * The output from an unsuccessful simulation should describe an error of what went wrong.
 
 ### What we review
-We ask you to do this test to show your skills as a developer. Our reviwers will focus on your overall design of the solution, error handling, maintainability of your code, and object orientated principles if applicable for the selected language.
+We ask you to do this test to show your skills as a developer. Our reviewers will focus on your overall design of the solution, error handling, maintainability of your code, and object orientated principles if applicable for the selected language.
 
 ### Coding task requirements
 We think that this test will take you between 6-8 hours, however this is not a time limit so feel free to spend as much time as you see necessary.
@@ -67,8 +67,8 @@ Please answer these questions in a markdown file called `Answers.md`.
 * The answers to the technical questions should be included as a single markdown file named `Answers.md`.
 
 Before submitting it to us, please make sure that the following requirements have been met:
-* Complete the user story described below.
-* In a README file, describe your solution and make sure you provide a guide on how to use you simulator. If your solution need specific instructions on how to run and compile your code you must add them to the README as well.
+* Complete the user story described above.
+* In a README file, describe your solution and make sure you provide a guide on how to use you simulator. If your solution needs specific instructions on how to run and compile your code you must add them to the README as well.
 * Write your solution in one of the following languages; Java, C++, C#, JavaScript. If you wish to use another language, please check beforehand with Anna Eggert.
 * Your code must compile and run.
 * Feel free to use whatever frameworks/libraries/packages you like.
