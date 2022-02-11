@@ -32,13 +32,14 @@ Please answer these questions in a markdown file called `Answers.md`.
 4. What did you think of this recruitment test?
 
 ## How do I hand in my solution? ##
-* Please send your solution to the person who asked you to do the test as a zip-file
+* Please send your solution to the person who asked you to do the test.
+    * Send the solution as a zipfile, either by email or through a file sharing service (Dropbox, Google Drive, OneDrive etc.)
     * All typically ignored files and folders should be removed (node_modules, bin etc).
     * The zip-file should contain a clone of this git repo, with your work added in commit(s).
     * Try to make the solution as easy as possible for us to get up and running to test drive.
 
 ### If we agree to meet for an interview ###
-* Please bring your application along to your interview
+* **IMPORTANT:** Please bring your application along to your interview
     * Be prepared to run and demonstrate the application. 
     * Be prepared to present the code in an IDE of your choice on your own computer. 
 * In addition to this assignment you should also be prepared to show other projects you developed (if you have any).
