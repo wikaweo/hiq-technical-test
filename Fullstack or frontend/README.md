@@ -16,33 +16,37 @@ Thank you for taking the time to do HiQ's recruitment test. It consists of two p
 * In this repository you'll find some useful text files for testing your application.
 * Choose one of the options below for your web application:
     * Develop a web application (frontend only)
-    * Develop a restful web API (backend only)
-    * Develop a web application with a restful web API and frontend
+    * Develop a RESTful web API (backend only)
+    * Develop a web application with a RESTful web API and frontend
 * You are free to choose what specific technologies to use in this assignment, however we suggest
-    * ASP.NET Core, ASP.NET Framework for backend
+    * ASP.NET Core, ASP.NET Framework, Java EE, Spring Boot, NodeJS, Python for backend
     * JavaScript, React/Vue/Angular for frontend
     * Webpack
     * Automated tests are nice, but not mandatory
     * Please list of all your technical choises and motivate them
+* Act as if this is an actual work assignment. Use the same type of workflow and reasoning that you would if this was something you were being paid for. Be prepared to explain your process.
+* Please supply complete instructions for setting up and running your application.
+    * Try and reason about how the application would build, deploy and run in a production environment
+    * If possible, try and emulate such an environment in a way so that we can run it (not mandatory)
 
 ### Questions ###
 Please answer these questions in a markdown file called `Answers.md`.
 
 1. How much time did you end up spending on this coding test?
-2. Explain why you chose the code structure(s) you used in your solution.
+2. Explain why you chose the code structure(s) you used in your solution and any other specific choices you made.
 3. What would you add to your solution if you had more time? This question is especially important if you did not spend much time on the coding test - use this as an opportunity to explain what your solution is missing.
 4. What did you think of this recruitment test?
 
 
 ## Where do I hand in my solution? ##
-* Please send your solution to us as a zip-file 
+* Please send your solution to us as a zip-file
     * All typically ignored files and folders should be removed (node_modules, bin etc).
     * The zip-file should contain a clone of this git repo, with your work added in commit(s).
 
 ### If we agree to meet for an interview ###
 * Please bring your web application along to your interview
-    * Be prepared to run and demonstrate the application. 
-    * Be prepared to present the code in an IDE of your choice on your own computer. 
+    * Be prepared to run and demonstrate the application.
+    * Be prepared to present the code in an IDE of your choice on your own computer.
 * In addition to this assignment you should also be prepared to show other projects you developed (if you have any).
 
 ### If I have any questions ###
