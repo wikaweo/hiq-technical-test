@@ -46,11 +46,12 @@ This guide assumes you have git installed, if not - follow [this guide](https://
 - Navigate to `https://github.com/your-profile-name`, or create a profile if you don't already have one, and create a new repository.
 - Name it something like hiq-technical-test and make sure to make it public and don't include a README or gitignore.
 - On your local machine, cd into your newly cloned repository and run `git remote remove origin`
-- Create a link between the local repo and your remote by running `git remote set-url origin git@github.com:YourUsername/YourRepo.git`
+- Create a link between the local repo and your remote by running `git remote add https://github.com:YourUsername/YourRepo.git`
 - Push the contents of the repo to your remote by running `git push -u origin main`
-  - At this step, you might be prompted to authenticate.
+  - At this point, you might be prompted to authenticate.
     - If you haven't created an SSH key for Github, follow [Github's guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) for how to set it up.
     - If you already have an SSH key setup, enter it's passphrase to authenticate and push again.
+- When your'e done developing your solution, send the link to your repo in github to the person that sent this test to you.
 
 ### If we agree to meet for an interview
 
