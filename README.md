@@ -42,7 +42,7 @@ Please answer these questions in a markdown file called `Answers.md`.
 
 This guide assumes you have git installed, if not - follow [this guide](https://github.com/git-guides/install-git) to install it first.
 
-- Clone the repository to your local machine by running `git clone https://hiqskane@dev.azure.com/hiqskane/HiQ.TechnicalTest%20%28PUBLIC%29/_git/HiQ.TechnicalTest%20%28PUBLIC%29`
+- Clone the repository to your local machine by running `git clone https://hiqskane@dev.azure.com/hiqskane/hiq-technical-test/_git/hiq-technical-test`
 - Navigate to `https://github.com/your-profile-name`, or create a profile if you don't already have one, and create a new repository.
 - Name it something like hiq-technical-test and make sure to make it public and don't include a README or gitignore.
 - On your local machine, cd into your newly cloned repository and run `git remote remove origin`
