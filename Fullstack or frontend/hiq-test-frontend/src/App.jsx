@@ -1,21 +1,19 @@
 import { useState } from 'react'
+import FileUploader from './FileUploader'
+import { Paragraph } from './components/Typography'
 
-function App() {
-  const [file, setFile] = useState(null)
-  const [result, setResult] = useState('')
+export default function App() {
   const [loading, setLoading] = useState(false)
+  const [uploadComplete, setUploadComplete] = useState(false)
+  const [result, setResult] = useState(null)
 
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0])
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    if (!file) return
-
-    setLoading(true)
+  const handleUpload = async (file) => {
     const formData = new FormData()
     formData.append('file', file)
+
+    setLoading(true)
+    setUploadComplete(false)
+    setResult(null)
 
     try {
       const response = await fetch('http://localhost:5000/api/process', {
@@ -23,40 +21,39 @@ function App() {
         body: formData,
       })
 
-      const data = await response.text()
+      const data = await response.json()
       setResult(data)
+      setUploadComplete(true)
     } catch (error) {
-      console.error('Upload failed:', error)
-      setResult(error)
+      alert('Fel vid uppladdning')
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <div className="p-4 max-w-xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Text File Processor</h1>
-
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input type="file" onChange={handleFileChange} accept=".txt" />
-        <button
-          type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded"
-        >
-          {loading ? 'Bearbetar...' : 'Ladda upp & Bearbeta'}
-        </button>
-      </form>
+    <main className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <FileUploader
+        onUpload={handleUpload}
+        loading={loading}
+        uploadComplete={uploadComplete}
+      />
 
       {result && (
-        <div className="mt-6">
-          <h2 className="text-xl font-semibold mb-2">Bearbetad text:</h2>
-          <pre className="bg-gray-100 p-4 rounded whitespace-pre-wrap">
-            {result}
-          </pre>
-        </div>
+        <section className="max-w-3xl mx-auto mt-8 bg-white p-8 rounded-2xl shadow-lg space-y-6">
+          <div className="text-center space-y-1">
+            <h2 className="text-xl font-bold text-gray-800">Vanligaste ordet:</h2>
+            <Paragraph className="text-2xl font-mono text-purple-700">foo{result.mostUsed}bar</Paragraph>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-lg font-semibold text-gray-700 text-center">Bearbetad text:</h3>
+            <pre className="whitespace-pre-wrap font-mono bg-gray-100 p-6 rounded-xl text-gray-800 shadow-inner max-h-[60vh] overflow-auto">
+              {result.modified}
+            </pre>
+          </div>
+        </section>
       )}
-    </div>
+    </main>
   )
 }
-
-export default App
