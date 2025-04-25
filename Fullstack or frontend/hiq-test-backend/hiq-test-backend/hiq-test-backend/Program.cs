@@ -13,45 +13,72 @@ builder.Services.Configure<FormOptions>(options =>
 
 var app = builder.Build();
 
-// CORS-policy (öppen – ändra vid behov)
+// CORS-policy (öppen – anpassa för produktion)
 app.UseCors(policy =>
     policy.AllowAnyOrigin()
           .AllowAnyHeader()
           .AllowAnyMethod());
 
-// Endpoints
-app.MapPost("/api/process", async (HttpRequest request) =>
+// POST-endpoint för att bearbeta en uppladdad .txt-fil
+app.MapPost("/api/process", async (IFormFile file) =>
 {
-    // Kontrollera fil
-    if (!request.HasFormContentType || !request.Form.Files.Any())
-        return Results.BadRequest("No file uploaded.");
+    // Kontrollera om det är en .txt-fil
+    if (!file.FileName.EndsWith(".txt", StringComparison.OrdinalIgnoreCase))
+    {
+        return Results.BadRequest("Endast .txt-filer accepteras.");
+    }
 
-    var file = request.Form.Files[0];
+    try
+    {
+        using var reader = new StreamReader(file.OpenReadStream());
+        var content = await reader.ReadToEndAsync();
 
-    using var reader = new StreamReader(file.OpenReadStream());
-    var content = await reader.ReadToEndAsync();
+        if (string.IsNullOrWhiteSpace(content))
+        {
+            return Results.BadRequest("Filen är tom.");
+        }
 
-    // Räkna ord
-    var words = Regex.Matches(content.ToLower(), "\\b\\w+\\b")
-                     .Cast<Match>()
-                     .GroupBy(m => m.Value)
-                     .OrderByDescending(g => g.Count())
-                     .FirstOrDefault();
+        // Räkna förekomsten av varje ord (case-insensitivt)
+        var words = Regex.Matches(content.ToLower(), "\\b\\w+\\b")
+                         .Cast<Match>()
+                         .GroupBy(m => m.Value)
+                         .OrderByDescending(g => g.Count())
+                         .FirstOrDefault();
 
-    if (words == null)
-        return Results.Ok(content);
+        // Om inga ord hittades, returnera originaltext
+        if (words == null)
+        {
+            return Results.Ok(new
+            {
+                original = content,
+                modified = content,
+                mostUsed = ""
+            });
+        }
 
-    var mostUsed = words.Key;
+        var mostUsed = words.Key;
 
-    // Omringa det vanligaste ordet med foo/bar
-    var processedText = Regex.Replace(
-        content,
-        $"\\b{Regex.Escape(mostUsed)}\\b",
-        $"foo{mostUsed}bar",
-        RegexOptions.IgnoreCase
-    );
+        // Markera det vanligaste ordet med foo/bar
+        var processedText = Regex.Replace(
+            content,
+            $"\\b{Regex.Escape(mostUsed)}\\b",
+            $"foo{mostUsed}bar",
+            RegexOptions.IgnoreCase
+        );
 
-    return Results.Ok(processedText);
-});
+        // Returnera original, bearbetad text och vanligaste ordet
+        return Results.Ok(new
+        {
+            original = content,
+            modified = processedText,
+            mostUsed = mostUsed
+        });
+    }
+    catch (Exception ex)
+    {
+        // Loggning kan läggas till här
+        return Results.Problem("Ett internt fel uppstod vid bearbetning.");
+    }
+}).DisableAntiforgery();
 
 app.Run();
