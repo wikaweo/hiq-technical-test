@@ -38,19 +38,32 @@ Technology Choices
 
 These choices were made to reflect how I would approach a real-world assignment – focusing on clean architecture, maintainability, and a realistic development workflow.
 
+Automated Testing
+
+To ensure the core logic of the application works reliably, I added unit tests for the backend text processing function. This logic was separated into a static class (`TextProcessor`) to make it easily testable and independent of any API or file handling code.
+
+The unit tests are written using xUnit and cover key scenarios:
+- Identifying the most used word correctly
+- Replacing it with `foo` and `bar` in the original text
+- Handling edge cases like empty input, a single word, or strings with no valid words
+
+This test-driven approach reflects how I work in production environments – by isolating business logic and verifying it with automated tests to reduce bugs and ensure maintainability.
+
 3. What would you add to your solution if you had more time?
 
 If I had more time, I would consider:
 
-- Adding automated unit tests for the text processing logic
+- Add integration tests for the API endpoint to ensure end-to-end reliability.
 - Improving the frontend UI with more feedback (loading state, error handling, file type validation)
 - Using a more robust backend structure, e.g. breaking logic into services or controllers
 - Dockerizing both frontend and backend for easy deployment
 - Adding a basic **CI/CD pipeline using GitHub Actions or Azure DevOps
 - Supporting larger files or async processing for scalability
 - Supporting other types of files, not only txt files
+- Adding integration tests for the API endpoint
+- Testing frontend behavior with mock API responses
+- Including code coverage analysis with tools like Coverlet
 
 4. What did you think of this recruitment test?
 
 I really liked the test – it’s practical, open-ended, and reflects a real-world use case well. It allowed me to demonstrate fullstack capabilities without being overly complex. The instructions were clear, and I appreciated the freedom in choosing tools and structuring the solution.
-
