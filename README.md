@@ -1,65 +1,145 @@
-# README
+# 📄 HIQ Technical Test – Text Processing Application
 
-### What is this repository for?
+## 📚 Project Overview
 
-This repository serves as a technical test for developers pursuing a position at HiQ Skåne.
+This is a fullstack web application where users can upload a text file.  
+The backend processes the file by finding the most frequently used word and surrounding it with `foo` and `bar`.  
+The goal was to treat this assignment like a real-world client project: applying good structure, best practices, and production-like thinking.
 
-## Instructions
+---
 
-Thank you for taking the time to do HiQ's recruitment test. It consists of two parts:
+## 🛠️ Technology Stack
 
-- Coding test
-- A few questions
+- **Frontend**: React (with Vite)
+- **Backend**: ASP.NET Core 8 Minimal API
+- **Testing**: xUnit for backend unit tests
+- **Tooling**: .NET 8 SDK, Node.js 18+, npm, Visual Studio 2022+
 
-### Coding test
+---
 
-- In this repository you'll find two different tests:
-  - One for developers focusing on backend technoligies only
-  - One for developers focusing on frontend technologies, or both frontend and backend technologies.
-  - Choose the one best matching your preferences.
-- You are free to choose what specific technologies to use in this assignment, however we would like you to provide an explanation of your choices.
-- Automated tests are nice, but not mandatory
-- If something is unclear about the specifications, you can make your own decision. In a real life project, you would have a dialog about how the final product will look. In this project, we are interested in your code. You won't lose points because we expected a checkbox and you gave us a dropdown!
+## 📂 Project Structure
 
-### What we look for
+/Fullstack or frontend
+├── hiq-test-frontend/    # React + Vite frontend
+├── hiq-test-backend/     # ASP.NET Core 8 backend
+├── Example files to process/ # Example .txt files
+├── Answers.md            # Answers to recruitment questions
+├── README.md             # Project instructions
 
-We are not looking for perfection. It is okay if you get stuck, or if there is some part of the test you don't know how to do. We are looking for
+---
 
-- Well-structured and organized code. We want to see your ability to break down the problem into classes and methods.
-- Thoughtfulness. We want to see that you think about others and consider their perspective. You do this by writing code that is easy to read and understand, by providing clear instructions for how to run the project, and by reading the directions thoroughly.
-- Error-handling and edge cases. We want to see that you have considered what happens if something goes wrong. Handling errors and edge cases covers a lot of ground, so we don't expect you to think of everything, but we want to see a good attempt.
+## 🚀 How to Set Up and Run Locally
 
-### Questions
+### Prerequisites
 
-Please answer these questions in a markdown file called `Answers.md`.
+- .NET 8 SDK installed
+- Node.js 18+ and npm installed
+- Visual Studio 2022+ (optional but recommended)
 
-1. How long time did you end up spending on this coding test?
-2. Explain why you chose the code structure(s) you used in your solution.
-3. What would you add to your solution if you had more time? This question is especially important if you did not spend much time on the coding test - use this as an opportunity to explain what your solution is missing.
-4. What did you think of this recruitment test?
+---
 
-## How do I hand in my solution?
+### 1. Clone the Repository
 
-This guide assumes you have git installed, if not - follow [this guide](https://github.com/git-guides/install-git) to install it first.
+git clone https://dev.azure.com/hiqskane/_git/hiq-technical-test
+cd "Fullstack or frontend"
 
-- Clone the repository to your local machine by running `git clone https://hiqskane@dev.azure.com/hiqskane/hiq-technical-test/_git/hiq-technical-test`
-- Navigate to `https://github.com/your-profile-name`, or create a profile if you don't already have one, and create a new repository.
-- Name it something like hiq-technical-test and make sure to make it public and don't include a README or gitignore.
-- On your local machine, cd into your newly cloned repository and run `git remote remove origin`
-- Create a link between the local repo and your remote by running `git remote add https://github.com:YourUsername/YourRepo.git`
-- Push the contents of the repo to your remote by running `git push -u origin main`
-  - At this point, you might be prompted to authenticate.
-    - If you haven't created an SSH key for Github, follow [Github's guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) for how to set it up.
-    - If you already have an SSH key setup, enter it's passphrase to authenticate and push again.
-- When your'e done developing your solution, send the link to your repo in github to the person that sent this test to you.
+---
 
-### If we agree to meet for an interview
+### 2. Setup and Run Backend
 
-- **IMPORTANT:** Please bring your application along to your interview
-  - Be prepared to run and demonstrate the application.
-  - Be prepared to present the code in an IDE of your choice on your own computer.
-- In addition to this assignment you should also be prepared to show other projects you developed (if you have any).
+cd hiq-test-backend
+dotnet restore
+dotnet build
+dotnet run
 
-### If I have any questions
+The backend server will run at:
+https://localhost:5000
 
-If you have any questions about your assignment you are absolutely welcome to contact the person who asked you to do the test.
+---
+
+### 3. Setup and Run Frontend
+
+In a new terminal:
+cd hiq-test-frontend
+npm install
+npm run dev
+
+Frontend will be available at:
+http://localhost:5173
+
+---
+
+### 4. Upload and Process Files
+
+- Navigate to [http://localhost:5173](http://localhost:5173) in your browser.
+- Upload a `.txt` file.
+- The processed text will be displayed with the most frequent word surrounded by `foo` and `bar`.
+
+---
+
+## 🧪 How to Run Backend Tests
+
+Unit tests are provided to validate the core text processing logic.
+
+Inside the solution directory:
+dotnet test
+
+---
+
+## 🏢 Production Build and Deployment Strategy
+
+### Backend
+- Publish the backend using:
+dotnet publish -c Release -o ./publish
+
+- Deploy to Azure App Service, AWS Elastic Beanstalk, or similar.
+- Enforce HTTPS and configure CORS to allow only the frontend domain.
+
+---
+
+### Frontend
+- Build the frontend for production:
+npm run build
+
+- Serve the built files (`dist/`) using:
+  - Azure Static Web Apps
+  - Vercel
+  - Netlify
+  - AWS S3 + CloudFront
+
+---
+
+### Environment Variables
+
+- API base URLs should be environment-specific.
+- Secrets and connection strings should be stored securely (e.g., Azure Key Vault).
+
+---
+
+## 🌍 Local Production Emulation (Optional)
+
+To emulate a production-like environment locally:
+
+1. Serve the frontend static files:
+npm install -g serve
+serve -s dist
+
+2. Run the backend with:
+dotnet run --configuration Release
+
+This mimics separate deployments for frontend and backend.
+
+---
+
+## 🧠 Final Notes
+
+This project was developed with the following principles in mind:
+
+- Clear and maintainable project structure
+- Production readiness mindset
+- Solid frontend-backend integration
+- Reliable, testable core business logic
+
+---
+
+# ✅ Thank you for reviewing!
