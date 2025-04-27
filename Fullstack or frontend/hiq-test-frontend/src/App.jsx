@@ -32,7 +32,7 @@ export default function App() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <main className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <FileUploader
         onUpload={handleUpload}
         loading={loading}
@@ -40,17 +40,20 @@ export default function App() {
       />
 
       {result && (
-        <section className="max-w-3xl mx-auto mt-8 bg-white p-8 rounded-2xl shadow-lg space-y-6">
-          <div className="text-center space-y-1">
+        <section className="max-w-3xl mx-auto mt-8 bg-white p-8 rounded-2xl shadow-lg space-y-8">
+          <div className="text-center space-y-2">
             <h2 className="text-xl font-bold text-gray-800">Vanligaste ordet:</h2>
-            <Paragraph className="text-2xl font-mono text-purple-700">foo{result.mostUsed}bar</Paragraph>
+            <Paragraph className="text-2xl font-mono text-purple-700">{result.mostUsed}</Paragraph>
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-4">
             <h3 className="text-lg font-semibold text-gray-700 text-center">Bearbetad text:</h3>
-            <pre className="whitespace-pre-wrap font-mono bg-gray-100 p-6 rounded-xl text-gray-800 shadow-inner max-h-[60vh] overflow-auto">
-              {result.modified}
-            </pre>
+
+            <div className="bg-gray-100 rounded-xl p-6 shadow-inner overflow-auto max-h-[60vh]">
+              <pre className="whitespace-pre-wrap font-mono text-gray-800 text-sm">
+                {result.modified}
+              </pre>
+            </div>
           </div>
         </section>
       )}

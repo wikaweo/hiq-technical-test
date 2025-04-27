@@ -5,10 +5,9 @@ export default function Button({
   icon: Icon,
   loading = false,
   disabled = false,
-  variant = 'primary',
-  size = 'md',
   type = 'button',
   className = '',
+  size = 'md',
   ...props
 }) {
   const base =
@@ -21,21 +20,6 @@ export default function Button({
     xl: 'min-h-[56px] px-8 py-4 text-lg gap-3',
   }
 
-  const variants = {
-    hiq: 'bg-[#9933FF] text-white hover:bg-[#812be0]',
-    primary: 'bg-green-600 text-white hover:bg-green-700',
-    outline:
-      'border border-[#9933FF] text-[#9933FF] hover:bg-purple-50',
-    success: 'bg-green-600 text-white hover:bg-green-700',
-    danger: 'bg-red-500 text-white hover:bg-red-600',
-    disabled:
-      'bg-gray-300 text-white cursor-not-allowed opacity-60',
-  }
-
-  const variantClass = disabled
-    ? variants.disabled
-    : variants[variant] || variants.primary
-
   return (
     <button
       type={type}
@@ -43,7 +27,7 @@ export default function Button({
       aria-disabled={disabled || loading}
       aria-busy={loading}
       {...props}
-      className={`${base} ${sizes[size]} ${variantClass} ${className}`}
+      className={`${base} ${sizes[size]} ${className}`}
     >
       {loading ? (
         <Loader2 className="animate-spin w-4 h-4" />
