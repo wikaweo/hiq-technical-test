@@ -10,12 +10,13 @@
         [Fact]
         public void ProcessText_ReturnsCorrectlyModifiedText()
         {
-            string input = "HiQ is great. HiQ is really great. HiQ!";
+            string input = "The cat and the dog went to the market. The dog barked at the cat.";
+
             var (modified, mostUsed) = TextProcessor.ProcessText(input);
 
-            Assert.Equal("hiq", mostUsed, ignoreCase: true);
-            Assert.Contains("foohiqbar", modified.ToLower());
-            Assert.Equal(3, Regex.Matches(modified.ToLower(), "foohiqbar").Count);
+            Assert.Equal("the", mostUsed, ignoreCase: true);
+            Assert.Contains("foothebar", modified.ToLower());
+            Assert.Equal(5, Regex.Matches(modified.ToLower(), "foothebar").Count);
         }
 
         [Fact]
