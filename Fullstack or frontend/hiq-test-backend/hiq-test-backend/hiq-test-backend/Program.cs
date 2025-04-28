@@ -40,11 +40,17 @@ app.MapPost("/api/process", async (IFormFile file) =>
 
         if (fileExtension == ".rtf")
         {
-            var html = Rtf.ToHtml(rawContent);
-
-            var htmlDoc = new HtmlDocument();
-            htmlDoc.LoadHtml(html);
-            content = htmlDoc.DocumentNode.InnerText;
+            try
+            {
+                var html = Rtf.ToHtml(rawContent);
+                var htmlDoc = new HtmlDocument();
+                htmlDoc.LoadHtml(html);
+                content = htmlDoc.DocumentNode.InnerText;
+            }
+            catch
+            {
+                content = rawContent;
+            }
         }
         else
         {

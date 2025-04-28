@@ -44,7 +44,7 @@ export default function FileUploader({ onUpload, loading, uploadComplete }) {
                     <p className="text-[#6B7280] text-sm">
                         {isDragActive
                             ? 'Släpp filen här...'
-                            : 'Dra in en .txt, .md, .rtf eller .file här eller klicka på knappen nedan'}
+                            : 'Dra in en fil här eller klicka på knappen nedan'}
                     </p>
                 </div>
 
