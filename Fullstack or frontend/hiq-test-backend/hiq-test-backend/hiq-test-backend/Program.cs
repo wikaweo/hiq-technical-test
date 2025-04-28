@@ -1,7 +1,7 @@
-// --- Program.cs ---
 using hiq_test_backend;
 using Microsoft.AspNetCore.Http.Features;
-using System.Text.RegularExpressions;
+using RtfPipe;
+using HtmlAgilityPack;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,16 +21,35 @@ app.UseCors(policy =>
 
 app.MapPost("/api/process", async (IFormFile file) =>
 {
-    if (!file.FileName.EndsWith(".txt", StringComparison.OrdinalIgnoreCase))
-        return Results.BadRequest("Endast .txt-filer accepteras.");
+    var allowedExtensions = new[] { ".txt", ".rtf", ".md", ".file" };
+
+    if (!allowedExtensions.Contains(Path.GetExtension(file.FileName), StringComparer.OrdinalIgnoreCase))
+        return Results.BadRequest("Endast .txt, .rtf, .md, och .file-filer accepteras.");
 
     try
     {
-        using var reader = new StreamReader(file.OpenReadStream());
-        var content = await reader.ReadToEndAsync();
+        string content;
 
-        if (string.IsNullOrWhiteSpace(content))
+        using var reader = new StreamReader(file.OpenReadStream());
+        var rawContent = await reader.ReadToEndAsync();
+
+        if (string.IsNullOrWhiteSpace(rawContent))
             return Results.BadRequest("Filen är tom.");
+
+        var fileExtension = Path.GetExtension(file.FileName).ToLower();
+
+        if (fileExtension == ".rtf")
+        {
+            var html = Rtf.ToHtml(rawContent);
+
+            var htmlDoc = new HtmlDocument();
+            htmlDoc.LoadHtml(html);
+            content = htmlDoc.DocumentNode.InnerText;
+        }
+        else
+        {
+            content = rawContent;
+        }
 
         var (modified, mostUsed) = TextProcessor.ProcessText(content);
 
@@ -41,9 +60,9 @@ app.MapPost("/api/process", async (IFormFile file) =>
             mostUsed = mostUsed
         });
     }
-    catch
+    catch (Exception ex)
     {
-        return Results.Problem("Ett internt fel uppstod vid bearbetning.");
+        return Results.Problem("Ett internt fel uppstod vid bearbetning");
     }
 }).DisableAntiforgery();
 
