@@ -17,7 +17,10 @@ export default function FileUploader({ onUpload, loading, uploadComplete }) {
         noClick: true,
         noKeyboard: true,
         multiple: false,
-        accept: { 'text/plain': ['.txt'] },
+        accept: {
+            'text/plain': ['.txt', '.md', '.file'],
+            'application/rtf': ['.rtf'],
+        },
     })
 
     return (
@@ -41,7 +44,7 @@ export default function FileUploader({ onUpload, loading, uploadComplete }) {
                     <p className="text-[#6B7280] text-sm">
                         {isDragActive
                             ? 'Släpp filen här...'
-                            : 'Dra in en .txt-fil här eller klicka på knappen nedan'}
+                            : 'Dra in en fil här eller klicka på knappen nedan'}
                     </p>
                 </div>
 

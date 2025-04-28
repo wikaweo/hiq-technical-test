@@ -59,7 +59,6 @@ If I had more time, I would consider:
 - Dockerizing both frontend and backend for easy deployment
 - Adding a basic **CI/CD pipeline using GitHub Actions or Azure DevOps
 - Supporting larger files or async processing for scalability
-- Supporting other types of files, not only txt files
 - Adding integration tests for the API endpoint
 - Testing frontend behavior with mock API responses
 - Including code coverage analysis with tools like Coverlet
