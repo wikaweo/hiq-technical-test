@@ -8,7 +8,7 @@ I structured the project as a typical fullstack setup:
 
 - The frontend and backend are placed in separate folders within the same root project directory. This separation keeps responsibilities clear and mimics how teams often work in real-world environments.
 - The backend is implemented as a minimal ASP.NET Core Web API. Since the functionality is relatively small and focused (uploading and processing a file), a minimal API makes the code clean, concise, and easy to follow.
-- All business logic (e.g., finding the most used word and replacing it) is handled in one place in the backend for simplicity. With more time or complexity, I’d break it into services.
+- All business logic is handled in one place in the backend for simplicity. With more time or complexity, I’d break it into services.
 - The frontend is a simple React app with a single upload form and result display, using Vite for a fast development environment.
 
 Technology Choices
